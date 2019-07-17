@@ -12,11 +12,11 @@ struct CardView: View {
 
     private struct Constants {
         static let widthProportion: CGFloat = 0.8
-        static let cardAspectRatio: CGFloat = 0.63
+        static let cardAspectRatio: CGFloat = 1.58
         static let cornerRadius: CGFloat = 8
     }
 
-    @State var card: Card
+    var card: Card
 
     var body: some View {
 
@@ -26,7 +26,6 @@ struct CardView: View {
                     HStack(alignment: .top) {
                         Image(self.card.vendor.image)
                         Spacer()
-                        BalanceView(balance: "\(self.card.balance)")
                     }
                     .padding(15)
 
@@ -52,11 +51,10 @@ struct CardView: View {
                 )
             }
             .clipped()
-            .aspectRatio(CGSize(width: 1.58, height: 1), contentMode: .fit)
+            .aspectRatio(CGSize(width: Constants.cardAspectRatio, height: 1), contentMode: .fit)
             .cornerRadius(Constants.cornerRadius)
             .shadow(color: .gray, radius: 10, x: 0, y: 0)
             }
-
     }
 }
 

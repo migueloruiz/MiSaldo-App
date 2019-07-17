@@ -16,13 +16,16 @@ struct CardsStackView : View {
         static let cardsScaleOffset: Float = 0.2
     }
 
+    let cards: [Card]
+    let selectedCard: Card?
+    let didCardMove: () -> Void
+
     @State private var frontCardDragOffset: CGSize = .zero
-    @ObjectBinding var controller: CardsControllerImpl
 
     var body: some View {
         VStack {
             ZStack {
-                ForEach(controller.cards) { card in
+                ForEach(cards) { card in
                     return CardView(card: card)
                         .modifier(
                             CardStyleModifier(
@@ -32,36 +35,35 @@ struct CardsStackView : View {
                                 )
                             )
                         )
-                        .gesture(DragGesture().onChanged({ value in
-                            self.frontCardDragOffset = value.translation
-                            }).onEnded({ value in
-                                self.frontCardDragOffset = .zero
-                                if abs(value.translation.width) > UIScreen.main.bounds.width/4 {
-                                    self.controller.nextCardToFront()
-                                }
-                            }))
+                        .gesture(
+                            DragGesture()
+                                .onChanged({ value in
+                                    self.frontCardDragOffset = value.translation
+                                })
+                                .onEnded({ value in
+                                    let finalXTranslation = value.translation.width
+                                    let movesAtEnd = abs(finalXTranslation) > abs(self.frontCardDragOffset.width)
+
+                                    self.frontCardDragOffset = .zero
+                                    if movesAtEnd {
+                                        self.didCardMove()
+                                    }
+                                })
+                        )
                         }
             }.padding(20)
-
-            HStack {
-                ForEach(controller.cards) { card in
-                    Circle()
-                        .fill(self.isCardSelected(card: card) ? Color.gray : Color.red)
-                    .frame(width: 10)
-                }
-            }.frame(height: 20)
         }
     }
 
     private func isCardSelected(card: Card) -> Bool {
-        guard let selectedCard = controller.slectedCard else { return false }
+        guard let selectedCard = selectedCard else { return false }
         print(card.id, selectedCard.id, card.id == selectedCard.id)
         return card.id == selectedCard.id
     }
 
     private func style(for card: Card, frontCardDragOffset: CGSize) -> CardStyle {
-        let totalCards = controller.cards.count
-        let index = controller.index(for: card)
+        let totalCards = cards.count
+        let index = cards.firstIndex(where: { $0.id == card.id })!
         let isFrontCard = index == totalCards - 1
 
         let maxPosition = UIScreen.main.bounds.width
@@ -148,9 +150,11 @@ struct CardStyleModifier: ViewModifier {
 }
 
 #if DEBUG
-//struct ContentView_Previews : PreviewProvider {
-//    static var previews: some View {
-//        CardsStackView(cards: Card.previewContent.sorted(by: { $0.order < $1.order }))
-//    }
-//}
+struct CardsStackView_Previews : PreviewProvider {
+    static var previews: some View {
+        CardsStackView(cards: Card.previewContent,
+                       selectedCard: Card.previewContent[0],
+                       didCardMove: {})
+    }
+}
 #endif
