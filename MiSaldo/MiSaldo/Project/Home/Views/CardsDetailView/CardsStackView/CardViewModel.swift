@@ -37,7 +37,7 @@ enum CardVendor {
 struct Card: Identifiable {
     let id: String
     let order: Int
-    let balance: Int
+    let balance: String
     let vendor: CardVendor
 }
 
@@ -47,25 +47,25 @@ extension Card {
         Card(
             id: UUID().uuidString,
             order: 0,
-            balance: 1000,
+            balance: "1000",
             vendor: .bip
         ),
         Card(
             id: UUID().uuidString,
             order: 1,
-            balance: 1500,
+            balance: "1500",
             vendor: .valpo
         ),
         Card(
             id: UUID().uuidString,
             order: 2,
-            balance: 2000,
+            balance: "2000",
             vendor: .bip
         ),
         Card(
             id: UUID().uuidString,
             order: 3,
-            balance: 500,
+            balance: "500",
             vendor: .valpo
         )
     ]

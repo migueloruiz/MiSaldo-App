@@ -25,7 +25,7 @@ struct HomeView : View {
         case .loading:
             return AnyView(Text("loading"))
         case .displaying(let cards, let selectedCard):
-            return AnyView(CardsStackView(cards: cards, selectedCard: selectedCard) {
+            return AnyView(CardsDetailView(cards: cards, selectedCard: selectedCard) {
                 self.actions.moveNextCardToFront()
             })
         case .empty:
@@ -36,6 +36,7 @@ struct HomeView : View {
     var body: some View {
         VStack {
             currentView
+            Spacer()
         }.onAppear {
             self.actions.loadCards()
         }

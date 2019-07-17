@@ -12,7 +12,7 @@ import Combine
 struct CardsStackView : View {
 
     private struct Constants {
-        static let cardsVerticalOffset: Float = 20
+        static let cardsVerticalOffset: Float = 15
         static let cardsScaleOffset: Float = 0.2
     }
 
@@ -23,35 +23,34 @@ struct CardsStackView : View {
     @State private var frontCardDragOffset: CGSize = .zero
 
     var body: some View {
-        VStack {
-            ZStack {
-                ForEach(cards) { card in
-                    return CardView(card: card)
-                        .modifier(
-                            CardStyleModifier(
-                                style: self.style(
-                                    for: card,
-                                    frontCardDragOffset: self.frontCardDragOffset
-                                )
+
+        ZStack {
+            ForEach(cards) { card in
+                return CardView(card: card)
+                    .modifier(
+                        CardStyleModifier(
+                            style: self.style(
+                                for: card,
+                                frontCardDragOffset: self.frontCardDragOffset
                             )
                         )
-                        .gesture(
-                            DragGesture()
-                                .onChanged({ value in
-                                    self.frontCardDragOffset = value.translation
-                                })
-                                .onEnded({ value in
-                                    let finalXTranslation = value.translation.width
-                                    let movesAtEnd = abs(finalXTranslation) > abs(self.frontCardDragOffset.width)
+                    )
+                    .gesture(
+                        DragGesture()
+                            .onChanged({ value in
+                                self.frontCardDragOffset = value.translation
+                            })
+                            .onEnded({ value in
+                                let finalXTranslation = value.translation.width
+                                let movesAtEnd = abs(finalXTranslation) > abs(self.frontCardDragOffset.width)
 
-                                    self.frontCardDragOffset = .zero
-                                    if movesAtEnd {
-                                        self.didCardMove()
-                                    }
-                                })
-                        )
-                        }
-            }.padding(20)
+                                self.frontCardDragOffset = .zero
+                                if movesAtEnd {
+                                    self.didCardMove()
+                                }
+                            })
+                    )
+                }
         }
     }
 
@@ -105,9 +104,9 @@ struct CardsStackView : View {
     }
 
     private func yPossition(forIndex index: Int, totalCards: Int, isFrontCard: Bool, animationPercentage: Float) -> CGFloat {
-        // Line Ecuation: x = -y + a * b
-        let yPos: Float = Float(-index + totalCards - 1) * -Constants.cardsVerticalOffset
-        let animationOffset = Constants.cardsVerticalOffset * animationPercentage
+        // Line Ecuation: x = y - a * b
+        let yPos: Float = Float(index - (totalCards - 1)) * -Constants.cardsVerticalOffset
+        let animationOffset = -Constants.cardsVerticalOffset * animationPercentage
         return CGFloat(yPos) + CGFloat(isFrontCard ? 0 : animationOffset)
     }
 
