@@ -25,20 +25,10 @@ struct CardView: View {
                 VStack {
                     HStack(alignment: .top) {
                         Image(self.card.vendor.image)
-
                         Spacer()
                     }
-
                     Spacer()
-
-                    Text(self.card.id)
-                        .color(.gray)
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .frame(minWidth: 0)
-                        .padding(10)
-                        .background(Color.white)
-                        .cornerRadius(20)
+                    CardIDLabelView(value: self.card.id)
                 }
                 .padding(15)
                 .background(

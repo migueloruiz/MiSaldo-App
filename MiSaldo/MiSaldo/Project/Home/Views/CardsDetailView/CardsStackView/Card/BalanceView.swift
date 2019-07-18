@@ -36,7 +36,9 @@ struct PriceView_Previews : PreviewProvider {
             BalanceView(balance: "2,500")
                 .environment(\.colorScheme, .dark)
         }
-        .previewLayout(.fixed(width: 300, height: 300))
+        .previewLayout(.fixed(width: 200, height: 100))
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(Color.black)
 
     }
 }

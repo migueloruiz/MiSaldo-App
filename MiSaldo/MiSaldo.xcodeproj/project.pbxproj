@@ -13,6 +13,7 @@
 		865002E522DE87F3002C7605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 865002E322DE87F3002C7605 /* LaunchScreen.storyboard */; };
 		865002F022DE87F3002C7605 /* MiSaldoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865002EF22DE87F3002C7605 /* MiSaldoTests.swift */; };
 		865002FB22DE87F3002C7605 /* MiSaldoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865002FA22DE87F3002C7605 /* MiSaldoUITests.swift */; };
+		866C1D0E22E00BF900EB2AB6 /* CardIDLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866C1D0D22E00BF900EB2AB6 /* CardIDLabelView.swift */; };
 		86730EBB22DE891F00B79331 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730EBA22DE891E00B79331 /* SceneDelegate.swift */; };
 		86730EC722DE894E00B79331 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730EC222DE894E00B79331 /* CardViewModel.swift */; };
 		86730EC822DE894E00B79331 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730EC322DE894E00B79331 /* CardView.swift */; };
@@ -60,6 +61,7 @@
 		865002F622DE87F3002C7605 /* MiSaldoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiSaldoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		865002FA22DE87F3002C7605 /* MiSaldoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiSaldoUITests.swift; sourceTree = "<group>"; };
 		865002FC22DE87F3002C7605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		866C1D0D22E00BF900EB2AB6 /* CardIDLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardIDLabelView.swift; sourceTree = "<group>"; };
 		86730EBA22DE891E00B79331 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		86730EC222DE894E00B79331 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		86730EC322DE894E00B79331 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -181,6 +183,17 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		866C1D0C22E00BE300EB2AB6 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				86730EC522DE894E00B79331 /* BalanceView.swift */,
+				86730EC322DE894E00B79331 /* CardView.swift */,
+				86730EC222DE894E00B79331 /* CardViewModel.swift */,
+				866C1D0D22E00BF900EB2AB6 /* CardIDLabelView.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
 		86730EBF22DE894E00B79331 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,10 +204,8 @@
 		86730EC122DE894E00B79331 /* CardsStackView */ = {
 			isa = PBXGroup;
 			children = (
-				86730EC522DE894E00B79331 /* BalanceView.swift */,
 				86730EC422DE894E00B79331 /* CardsStackView.swift */,
-				86730EC322DE894E00B79331 /* CardView.swift */,
-				86730EC222DE894E00B79331 /* CardViewModel.swift */,
+				866C1D0C22E00BE300EB2AB6 /* Card */,
 			);
 			path = CardsStackView;
 			sourceTree = "<group>";
@@ -389,6 +400,7 @@
 			files = (
 				86730EC722DE894E00B79331 /* CardViewModel.swift in Sources */,
 				86D82DE922DEB01700367AFA /* HomeView.swift in Sources */,
+				866C1D0E22E00BF900EB2AB6 /* CardIDLabelView.swift in Sources */,
 				86D82DE722DEA5F800367AFA /* ViewActions.swift in Sources */,
 				86730EC922DE894E00B79331 /* CardsStackView.swift in Sources */,
 				86D82DDD22DE9DB700367AFA /* ViewState.swift in Sources */,
