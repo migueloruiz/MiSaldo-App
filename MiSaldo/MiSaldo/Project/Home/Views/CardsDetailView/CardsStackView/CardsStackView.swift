@@ -117,7 +117,7 @@ struct CardsStackView : View {
 
     private func cardAlpah(isFrontCard: Bool, animationPercentage: Float) -> Double {
         guard isFrontCard else { return 1 }
-        return Double(1 - animationPercentage)
+        return Double(1 - animationPercentage/2)
     }
 }
 

@@ -16,11 +16,11 @@ struct ValueDescriptionView : View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(valueName)
-                .color(.gray)
+                .color(.secondary)
                 .font(.caption)
                 .fontWeight(.bold)
             Text(value ?? "--")
-                .color(.black)
+                .color(.primary)
                 .font(.title)
 
         }

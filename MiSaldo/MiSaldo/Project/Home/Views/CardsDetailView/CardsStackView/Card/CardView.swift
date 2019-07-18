@@ -44,9 +44,9 @@ struct CardView: View {
                 )
             }
             .clipped()
-            .aspectRatio(CGSize(width: Constants.cardAspectRatio, height: 1), contentMode: .fit)
+            .aspectRatio(CGSize(width: Constants.cardAspectRatio, height: 1), contentMode: .fill)
             .cornerRadius(Constants.cornerRadius)
-            .shadow(color: .gray, radius: 5, x: 0, y: 0)
+            .shadow(color: Color.gray.opacity(0.5), radius: 5, x: 0, y: 0)
             }
     }
 }

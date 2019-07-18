@@ -34,10 +34,10 @@ struct HomeView : View {
     }
 
     var body: some View {
-        VStack {
+        ScrollView {
             currentView
-            Spacer()
-        }.onAppear {
+        }
+        .onAppear {
             self.actions.loadCards()
         }
     }
