@@ -25,19 +25,22 @@ struct CardView: View {
                 VStack {
                     HStack(alignment: .top) {
                         Image(self.card.vendor.image)
+
                         Spacer()
                     }
-                    .padding(15)
 
                     Spacer()
 
                     Text(self.card.id)
                         .color(.gray)
-                        .font(.headline)
+                        .font(.body)
+                        .fontWeight(.bold)
                         .frame(minWidth: 0)
-                        .padding()
+                        .padding(10)
                         .background(Color.white)
+                        .cornerRadius(20)
                 }
+                .padding(15)
                 .background(
                     Rectangle()
                         .fill(
@@ -53,7 +56,7 @@ struct CardView: View {
             .clipped()
             .aspectRatio(CGSize(width: Constants.cardAspectRatio, height: 1), contentMode: .fit)
             .cornerRadius(Constants.cornerRadius)
-            .shadow(color: .gray, radius: 10, x: 0, y: 0)
+            .shadow(color: .gray, radius: 5, x: 0, y: 0)
             }
     }
 }
