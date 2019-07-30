@@ -16,13 +16,13 @@ struct CardGeneralInfoView : View {
     var body: some View {
         return HStack {
             ValueDescriptionView(
-                valueName: "Saldo",
+                title: "Saldo",
                 value: balance ?? "--"
             )
             Spacer()
             ValueDescriptionView(
-                valueName: "Actualizado",
-                value: lastUpdate ?? "__"
+                title: "Actualizado",
+                value: lastUpdate 
             )
         }
     }

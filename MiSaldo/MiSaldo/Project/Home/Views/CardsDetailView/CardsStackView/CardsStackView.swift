@@ -151,9 +151,14 @@ struct CardStyleModifier: ViewModifier {
 #if DEBUG
 struct CardsStackView_Previews : PreviewProvider {
     static var previews: some View {
-        CardsStackView(cards: Card.previewContent,
-                       selectedCard: Card.previewContent[0],
-                       didCardMove: {})
+        VStack {
+            CardsStackView(cards: Card.previewContent,
+                           selectedCard: Card.previewContent[0],
+                           didCardMove: {})
+        }.previewLayout(.fixed(width: 400, height: 300))
+        .padding(50)
+
+
     }
 }
 #endif

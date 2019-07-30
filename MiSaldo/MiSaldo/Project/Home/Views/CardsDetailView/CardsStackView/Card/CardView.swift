@@ -36,8 +36,8 @@ struct CardView: View {
                         .fill(
                             LinearGradient(
                                 gradient: Gradient(colors: [self.card.vendor.colorTop, self.card.vendor.colorBottom]),
-                                startPoint: .top,
-                                endPoint: .bottom
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
                             )
                         )
                         .cornerRadius(Constants.cornerRadius)
@@ -59,7 +59,8 @@ struct DealView_Previews : PreviewProvider {
             CardView(card: Card.previewContent[0])
 
         }
-        .previewLayout(.fixed(width: 400, height: 400))
+        .padding()
+        .previewLayout(.fixed(width: 400, height: 250))
     }
 }
 #endif

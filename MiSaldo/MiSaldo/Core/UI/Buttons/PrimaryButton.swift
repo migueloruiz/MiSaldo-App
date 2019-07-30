@@ -1,5 +1,5 @@
 //
-//  SecondaryButton.swift
+//  PrymaryButton.swift
 //  MiSaldo
 //
 //  Created by Miguel Ruiz on 17/07/19.
@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-struct SecondaryButton : View {
+struct PrimaryButton : View {
+
     let iconName: String
     let title: String
     let color: Color?
@@ -19,33 +20,33 @@ struct SecondaryButton : View {
             HStack(alignment: .lastTextBaseline) {
                 Spacer()
                 Image(systemName: iconName)
-                    .accentColor(color)
+                    .accentColor(.white)
                     .font(Font.callout.weight(.bold))
                 Text(title)
                     .font(.callout)
                     .fontWeight(.bold)
-                    .color(color)
+                    .color(.white)
                 Spacer()
             }
         }
         .padding(10)
-        .clipped()
-        .frame(minWidth: 0, maxWidth: .infinity)
-        .border(color ?? Color.red, width: 2, cornerRadius: 20)
+            .background(color)
+            .cornerRadius(20)
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .animation(Animation.basic(duration: 0.3, curve: .easeInOut))
     }
 }
 
 #if DEBUG
-struct SecondaryButton_Previews : PreviewProvider {
+struct PrymaryButton_Previews : PreviewProvider {
     static var previews: some View {
         Group {
-            SecondaryButton(iconName: "goforward",
+            PrimaryButton(iconName: "goforward",
                           title: "Actualizar",
                           color: Color.red,
                           action: {})
         }.previewLayout(
             .fixed(width: 400, height: 100)
-        ).padding(20)
-    }
+        ).padding(20)    }
 }
 #endif

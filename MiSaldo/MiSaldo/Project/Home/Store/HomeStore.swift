@@ -25,15 +25,15 @@ extension HomeStore: HomeActionsDelegate {
     func loadCards() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.cards = Card.previewContent
-            self.selectedCard = self.cards.first
+            self.selectedCard = self.cards.last
             self.state.viewState = .displaying(cards: self.cards, selectedCard: self.selectedCard)
         }
     }
 
     func moveNextCardToFront() {
         let mutableDeal = cards.removeLast()
-        selectedCard = mutableDeal
         cards.insert(mutableDeal, at: 0)
+        selectedCard = cards.last
         state.viewState = .displaying(cards: cards, selectedCard: selectedCard)
     }
 

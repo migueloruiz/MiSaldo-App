@@ -34,7 +34,7 @@ struct HomeView : View {
     }
 
     var body: some View {
-        ScrollView {
+        VStack {
             currentView
         }
         .onAppear {

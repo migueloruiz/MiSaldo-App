@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8626E0FA22E37D2400E563A8 /* RatesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626E0F922E37D2400E563A8 /* RatesListView.swift */; };
+		8626E0FE22E3850900E563A8 /* ValuesDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626E0FD22E3850900E563A8 /* ValuesDescriptionView.swift */; };
+		8626E10022E38BF200E563A8 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626E0FF22E38BF200E563A8 /* RateView.swift */; };
+		8626E10222E38DC500E563A8 /* RateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626E10122E38DC500E563A8 /* RateViewModel.swift */; };
+		8649196822E3600B00ACAE24 /* CardDetailTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649196722E3600B00ACAE24 /* CardDetailTopBarView.swift */; };
 		865002D622DE87F2002C7605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865002D522DE87F2002C7605 /* AppDelegate.swift */; };
 		865002DF22DE87F3002C7605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865002DE22DE87F3002C7605 /* Assets.xcassets */; };
-		865002E222DE87F3002C7605 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865002E122DE87F3002C7605 /* Preview Assets.xcassets */; };
 		865002E522DE87F3002C7605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 865002E322DE87F3002C7605 /* LaunchScreen.storyboard */; };
 		865002F022DE87F3002C7605 /* MiSaldoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865002EF22DE87F3002C7605 /* MiSaldoTests.swift */; };
 		865002FB22DE87F3002C7605 /* MiSaldoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865002FA22DE87F3002C7605 /* MiSaldoUITests.swift */; };
@@ -52,10 +56,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8626E0F922E37D2400E563A8 /* RatesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesListView.swift; sourceTree = "<group>"; };
+		8626E0FD22E3850900E563A8 /* ValuesDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesDescriptionView.swift; sourceTree = "<group>"; };
+		8626E0FF22E38BF200E563A8 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
+		8626E10122E38DC500E563A8 /* RateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewModel.swift; sourceTree = "<group>"; };
+		8649196722E3600B00ACAE24 /* CardDetailTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailTopBarView.swift; sourceTree = "<group>"; };
 		865002D222DE87F2002C7605 /* MiSaldo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiSaldo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		865002D522DE87F2002C7605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		865002DE22DE87F3002C7605 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		865002E122DE87F3002C7605 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		865002E422DE87F3002C7605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		865002E622DE87F3002C7605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		865002EB22DE87F3002C7605 /* MiSaldoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiSaldoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +118,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8626E0F722E379AA00E563A8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8626E0FC22E384EC00E563A8 /* ValueDescription */,
+				8626E0F822E379BE00E563A8 /* Buttons */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8626E0F822E379BE00E563A8 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				866C1D1322E0186E00EB2AB6 /* PrimaryButton.swift */,
+				866C1D1522E0192F00EB2AB6 /* SecondaryButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		8626E0FB22E37D5900E563A8 /* RatesList */ = {
+			isa = PBXGroup;
+			children = (
+				8626E0F922E37D2400E563A8 /* RatesListView.swift */,
+				8626E0FF22E38BF200E563A8 /* RateView.swift */,
+				8626E10122E38DC500E563A8 /* RateViewModel.swift */,
+			);
+			path = RatesList;
+			sourceTree = "<group>";
+		};
+		8626E0FC22E384EC00E563A8 /* ValueDescription */ = {
+			isa = PBXGroup;
+			children = (
+				86D82DF022DEC74200367AFA /* ValueDescriptionView.swift */,
+				8626E0FD22E3850900E563A8 /* ValuesDescriptionView.swift */,
+			);
+			path = ValueDescription;
+			sourceTree = "<group>";
+		};
+		8649196922E3774E00ACAE24 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				86D82DDA22DE9D5A00367AFA /* Store.swift */,
+				86D82DDC22DE9DB700367AFA /* ViewState.swift */,
+				86D82DE622DEA5F800367AFA /* ViewActions.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
 		865002C922DE87F2002C7605 = {
 			isa = PBXGroup;
 			children = (
@@ -138,18 +193,9 @@
 				8650030922DE884E002C7605 /* Assets */,
 				86D82DD722DE9D3700367AFA /* Core */,
 				86730EBF22DE894E00B79331 /* Model */,
-				865002E022DE87F3002C7605 /* Preview Content */,
 				86D82DDE22DE9EA900367AFA /* Project */,
 			);
 			path = MiSaldo;
-			sourceTree = "<group>";
-		};
-		865002E022DE87F3002C7605 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				865002E122DE87F3002C7605 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		865002EE22DE87F3002C7605 /* MiSaldoTests */ = {
@@ -203,7 +249,6 @@
 		866C1D1222E00F0000EB2AB6 /* CardGeneralInfoView */ = {
 			isa = PBXGroup;
 			children = (
-				86D82DF022DEC74200367AFA /* ValueDescriptionView.swift */,
 				866C1D0F22E00EEE00EB2AB6 /* CardGeneralInfoView.swift */,
 			);
 			path = CardGeneralInfoView;
@@ -228,9 +273,8 @@
 		86D82DD722DE9D3700367AFA /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				86D82DDA22DE9D5A00367AFA /* Store.swift */,
-				86D82DDC22DE9DB700367AFA /* ViewState.swift */,
-				86D82DE622DEA5F800367AFA /* ViewActions.swift */,
+				8626E0F722E379AA00E563A8 /* UI */,
+				8649196922E3774E00ACAE24 /* Redux */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -274,11 +318,11 @@
 		86D82DED22DEC37C00367AFA /* CardsDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				8649196722E3600B00ACAE24 /* CardDetailTopBarView.swift */,
 				86D82DEE22DEC39C00367AFA /* CardsDetailView.swift */,
-				86730EC122DE894E00B79331 /* CardsStackView */,
+				8626E0FB22E37D5900E563A8 /* RatesList */,
 				866C1D1222E00F0000EB2AB6 /* CardGeneralInfoView */,
-				866C1D1322E0186E00EB2AB6 /* PrimaryButton.swift */,
-				866C1D1522E0192F00EB2AB6 /* SecondaryButton.swift */,
+				86730EC122DE894E00B79331 /* CardsStackView */,
 			);
 			path = CardsDetailView;
 			sourceTree = "<group>";
@@ -389,7 +433,6 @@
 			files = (
 				865002E522DE87F3002C7605 /* LaunchScreen.storyboard in Resources */,
 				86730ECD22DE896300B79331 /* Colors.xcassets in Resources */,
-				865002E222DE87F3002C7605 /* Preview Assets.xcassets in Resources */,
 				865002DF22DE87F3002C7605 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,19 +464,24 @@
 				86D82DE722DEA5F800367AFA /* ViewActions.swift in Sources */,
 				866C1D1422E0186E00EB2AB6 /* PrimaryButton.swift in Sources */,
 				86730EC922DE894E00B79331 /* CardsStackView.swift in Sources */,
+				8626E0FA22E37D2400E563A8 /* RatesListView.swift in Sources */,
 				86D82DDD22DE9DB700367AFA /* ViewState.swift in Sources */,
 				866C1D1022E00EEE00EB2AB6 /* CardGeneralInfoView.swift in Sources */,
 				86D82DE522DE9FDA00367AFA /* HomeState.swift in Sources */,
 				86D82DE222DE9F5C00367AFA /* HomeStore.swift in Sources */,
+				8626E0FE22E3850900E563A8 /* ValuesDescriptionView.swift in Sources */,
 				866C1D1622E0192F00EB2AB6 /* SecondaryButton.swift in Sources */,
 				86D82DDB22DE9D5A00367AFA /* Store.swift in Sources */,
 				86D82DF122DEC74200367AFA /* ValueDescriptionView.swift in Sources */,
+				8649196822E3600B00ACAE24 /* CardDetailTopBarView.swift in Sources */,
 				865002D622DE87F2002C7605 /* AppDelegate.swift in Sources */,
 				86D82DEB22DEC18900367AFA /* HomeActions.swift in Sources */,
 				86730EBB22DE891F00B79331 /* SceneDelegate.swift in Sources */,
 				86730EC822DE894E00B79331 /* CardView.swift in Sources */,
 				86730ECA22DE894E00B79331 /* BalanceView.swift in Sources */,
 				86D82DEF22DEC39C00367AFA /* CardsDetailView.swift in Sources */,
+				8626E10222E38DC500E563A8 /* RateViewModel.swift in Sources */,
+				8626E10022E38BF200E563A8 /* RateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,7 +647,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "MiSaldo/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = G79YXHT3W3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MiSaldo/Info.plist;
@@ -619,7 +667,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "MiSaldo/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = G79YXHT3W3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MiSaldo/Info.plist;
