@@ -1,9 +1,9 @@
 //
 //  PriceView.swift
-//  DealStack
+//  Mi Saldo
 //
-//  Created by Guilherme Rambo on 04/07/19.
-//  Copyright © 2019 Guilherme Rambo. All rights reserved.
+//  Created by Miguel Ruiz on 16/08/19.
+//  Copyright © 2019 Chimichanga Studio. All rights reserved.
 //
 
 import SwiftUI
@@ -15,13 +15,12 @@ struct BalanceView : View {
         ZStack {
             Text(self.balance)
                 .font(.title)
-                .fontWeight(.black)
-                .color(.black)
                 .padding(.vertical, 4)
                 .padding(.horizontal, 8)
+                .foregroundColor(.primaryText)
         }.background(
             RoundedRectangle(cornerRadius: 8)
-            .foregroundColor(.white)
+                .foregroundColor(.primaryBackground)
         )
     }
 }

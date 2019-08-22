@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-class Store<StateModel: ViewState, ActionsModel: ViewActions>: BindableObject {
+class Store<StateModel: ViewState, ActionsModel: ViewActions>: ObservableObject {
 
     private(set) var actions: ActionsModel
 

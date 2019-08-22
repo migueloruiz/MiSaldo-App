@@ -8,35 +8,19 @@
 
 import SwiftUI
 
-struct CardsDetailView : View {
+struct CardsDetailView: View {
 
     let cards: [Card]
     let selectedCard: Card?
     let didCardMove: () -> Void
 
-
     var body: some View {
         VStack {
-            HStack {
-                Text("Mi Saldo")
-                    .font(.system(.title, design: .rounded))
-                .fontWeight(.bold)
-                .color(.primary)
-                Spacer()
-                Button(action: {
-
-                }) {
-                    Image(systemName: "plus.circle.fill")
-                    .accentColor(.secondary)
-                    .font(Font.title.weight(.bold))
-                }
-            }.padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
-
             CardsStackView(
                 cards: self.cards,
                 selectedCard: self.selectedCard) {
                     self.didCardMove()
-            }
+            }.frame(minWidth: 0, maxWidth: .infinity)
 
             CardGeneralInfoView(
                 balance: self.selectedCard?.balance,
@@ -47,25 +31,29 @@ struct CardsDetailView : View {
                 PrimaryButton(iconName: "goforward",
                               title: "Actualizar",
                               color: self.selectedCard?.vendor.colorBottom,
-                              action: {print(345678)}).animation(Animation.basic(duration: 0.3, curve: .easeInOut))
+                              action: {})
+                    .animation(.easeInOut(duration: 0.3))
                 SecondaryButton(iconName: "creditcard.fill",
                               title: "Recarga",
                               color: self.selectedCard?.vendor.colorBottom,
-                              action: {print(345678)})
-                .animation(Animation.basic(duration: 0.3, curve: .easeInOut))
+                              action: {})
+                    .animation(.easeInOut(duration: 0.3))
 
             }.padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-            
-        }.padding(20)
+        }
     }
 }
 
 #if DEBUG
 struct CardsDetailView_Previews : PreviewProvider {
+    @State private var cards: [Card] = Card.previewContent
     static var previews: some View {
-        CardsDetailView(cards: Card.previewContent,
-                       selectedCard: Card.previewContent[0],
-                       didCardMove: {})
+        CardsDetailView(
+            cards: Card.previewContent,
+            selectedCard: Card.previewContent[0],
+            didCardMove: {}
+        )
+        .padding(20)
     }
 }
 #endif

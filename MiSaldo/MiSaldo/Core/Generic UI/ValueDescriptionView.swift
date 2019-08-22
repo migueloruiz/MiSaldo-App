@@ -16,13 +16,11 @@ struct ValueDescriptionView : View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(valueName)
-                .color(.secondary)
+                .foregroundColor(.secondary)
                 .font(.caption)
-                .fontWeight(.bold)
             Text(value ?? "--")
-                .color(.primary)
+                .foregroundColor(.primaryText)
                 .font(.title)
-
         }
     }
 }
@@ -30,8 +28,16 @@ struct ValueDescriptionView : View {
 #if DEBUG
 struct ValueDescriptionView_Previews : PreviewProvider {
     static var previews: some View {
-        ValueDescriptionView(valueName: "Saldo", value: "$8000")
-        .previewLayout(.fixed(width: 100, height: 100))
+        Group {
+             ValueDescriptionView(valueName: "Saldo", value: "$8000")
+                .environment(\.colorScheme, .light)
+
+             ValueDescriptionView(valueName: "Saldo", value: "$8000")
+                .environment(\.colorScheme, .dark)
+        }
+        .previewLayout(.fixed(width: 150, height: 150))
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(Color.primaryBackground)
     }
 }
 #endif

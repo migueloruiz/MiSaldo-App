@@ -11,6 +11,7 @@ import Foundation
 protocol HomeActionsDelegate: class {
     func loadCards()
     func moveNextCardToFront()
+    func addCard(withID id: String, vendor: CardVendor)
 }
 
 class HomeActions: HomeActionsDelegate {
@@ -23,9 +24,11 @@ class HomeActions: HomeActionsDelegate {
     func loadCards() {
         delegate?.loadCards()
     }
-
     func moveNextCardToFront() {
         delegate?.moveNextCardToFront()
     }
+    
+    func addCard(withID id: String, vendor: CardVendor) {
+        delegate?.addCard(withID: id, vendor: vendor)
+    }
 }
-

@@ -22,7 +22,7 @@ struct CardGeneralInfoView : View {
             Spacer()
             ValueDescriptionView(
                 valueName: "Actualizado",
-                value: lastUpdate ?? "__"
+                value: lastUpdate 
             )
         }
     }

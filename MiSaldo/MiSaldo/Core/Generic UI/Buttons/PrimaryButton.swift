@@ -23,9 +23,9 @@ struct PrimaryButton : View {
                     .accentColor(.white)
                     .font(Font.callout.weight(.bold))
                 Text(title)
+                    .foregroundColor(.white)
                     .font(.callout)
                     .fontWeight(.bold)
-                    .color(.white)
                 Spacer()
             }
         }
@@ -40,12 +40,22 @@ struct PrimaryButton : View {
 struct PrymaryButton_Previews : PreviewProvider {
     static var previews: some View {
         Group {
-            PrimaryButton(iconName: "goforward",
-                          title: "Actualizar",
-                          color: Color.red,
-                          action: {})
-        }.previewLayout(
-            .fixed(width: 400, height: 100)
-        ).padding(20)    }
+             PrimaryButton(iconName: "goforward",
+                                     title: "Actualizar",
+                                     color: .red,
+                                     action: {})
+                .environment(\.colorScheme, .light)
+
+             PrimaryButton(iconName: "goforward",
+                                     title: "Actualizar",
+                                     color: .red,
+                                     action: {})
+                .environment(\.colorScheme, .dark)
+        }
+        .previewLayout(.fixed(width: 200, height: 100))
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(Color.primaryBackground)
+        
+    }
 }
 #endif

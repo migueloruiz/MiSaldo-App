@@ -8,19 +8,18 @@
 
 import SwiftUI
 
-struct CardIDLabelView : View {
-
+struct CardIDLabel : View {
     let value: String
 
     var body: some View {
         return Text(self.value)
-            .color(.gray)
-            .font(.body)
+            .foregroundColor(.secondary)
             .fontWeight(.bold)
-            .frame(minWidth: 0)
+            .frame(minWidth: 0, maxWidth: .infinity)
             .padding(10)
-            .background(Color.white)
+            .background(Color.primaryBackground)
             .cornerRadius(20)
+            .lineLimit(1)
     }
 }
 
@@ -28,13 +27,16 @@ struct CardIDLabelView : View {
 struct CardIDLabelView_Previews : PreviewProvider {
     static var previews: some View {
         Group{
-            CardIDLabelView(value: "3453245-325-3425-3245")
+            CardIDLabel(value: "3453245-325-3425-3245")
+            .environment(\.colorScheme, .light)
+            
+            CardIDLabel(value: "3453245-32")
+            .environment(\.colorScheme, .dark)
         }
         .previewLayout(
             .fixed(width: 300, height: 100)
         )
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .background(Color.black)
     }
 }
 #endif

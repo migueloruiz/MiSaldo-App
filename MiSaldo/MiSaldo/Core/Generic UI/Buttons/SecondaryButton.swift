@@ -22,9 +22,10 @@ struct SecondaryButton : View {
                     .accentColor(color)
                     .font(Font.callout.weight(.bold))
                 Text(title)
+                    .foregroundColor(color)
                     .font(.callout)
                     .fontWeight(.bold)
-                    .color(color)
+
                 Spacer()
             }
         }
@@ -39,13 +40,21 @@ struct SecondaryButton : View {
 struct SecondaryButton_Previews : PreviewProvider {
     static var previews: some View {
         Group {
-            SecondaryButton(iconName: "goforward",
-                          title: "Actualizar",
-                          color: Color.red,
-                          action: {})
-        }.previewLayout(
-            .fixed(width: 400, height: 100)
-        ).padding(20)
+             SecondaryButton(iconName: "goforward",
+             title: "Actualizar",
+             color: Color.red,
+             action: {})
+                .environment(\.colorScheme, .light)
+
+             SecondaryButton(iconName: "goforward",
+             title: "Actualizar",
+             color: Color.red,
+             action: {})
+                .environment(\.colorScheme, .dark)
+        }
+        .previewLayout(.fixed(width: 200, height: 100))
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(Color.primaryBackground)
     }
 }
 #endif
